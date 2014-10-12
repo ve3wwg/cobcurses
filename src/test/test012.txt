@@ -1,0 +1,69 @@
+1                               -asis,uu=-12,u=-6,p=-12,-append=F
+.1
+.01
+.001
+.0001
+.00001
+.000001
+.0000001
+.00000001
+.000000001
+.0000000001
+0.0000000001
+0
+10.0
+100.0
+1000.0
+10000.0
+100000.0
+1000000.0
+10000000.0
+100000000.0
+1000000000.0
+10000000000.0
+   2     u
+ 25   uf
+   26    u F
+  27  uFarads
+   28  u farads
+ 29   uuf
+ .3 uf
+ 310  picofarads
+  3,11.00000 pF
+  3.12E0 p
+3.14PF                          -lcase,uu=-12,u=-6,p=-12,-asis,-append=F
+3.16uuf
+32,000F
+  32.0000E+003   Farads
+1ohm                            -
+   1.05
+  -2.5
+ 6.08e-3 ohms
+  .45kOhms
+1,200ohms
+1.2k
+  1.5 MegOhms
+1ohm                            -lcase,k=3,Meg=6,-asis,-append=ohms
+   1.05
+  -2.5
+ 6.08e-3 ohms
+  .45kOhms
+1,200ohms
+1.2k
+  1.5 MegOhms
+1ohm                            -lcase,k=3,Meg=6,-asis,-append=Ohms
+   1.05
+  -2.5
+ 6.08e-3 ohms
+  .45kOhms
+1,200ohms
+1.2k
+  1.5 MegOhms
+1ohm                            -lcase,k=3,Meg=6,M=6,-append=Ohms
+   1.05
+  -2.5
+ 6.08e-3 ohms
+  .45kOhms
+1,200ohms
+1.2k
+  1.5 MegOhms

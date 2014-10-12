@@ -1,0 +1,608 @@
+READ RECORD 0001
+006 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <682                                                         >
+ * FIELD # 02
+      DATA IS <bogus                                                       >
+ * FIELD # 03
+      DATA IS <--comment                                                   >
+ * FIELD # 04
+      DATA IS < Does this "quote" correctly?                               >
+ * FIELD # 05
+      DATA IS <file1                                                       >
+ * FIELD # 06
+      DATA IS <file2                                                       >
+ 
+READ RECORD 0002
+003 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <683                                                         >
+ * FIELD # 02
+      DATA IS <cvs                                                         >
+ * FIELD # 03
+      DATA IS <diff                                                        >
+ 
+READ RECORD 0003
+004 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <684                                                         >
+ * FIELD # 02
+      DATA IS <cvs                                                         >
+ * FIELD # 03
+      DATA IS <commit                                                      >
+ * FIELD # 04
+      DATA IS <do test                                                     >
+ 
+READ RECORD 0004
+003 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <685                                                         >
+ * FIELD # 02
+      DATA IS <cvs                                                         >
+ * FIELD # 03
+      DATA IS <diff                                                        >
+ 
+READ RECORD 0005
+004 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <686                                                         >
+ * FIELD # 02
+      DATA IS <cvs                                                         >
+ * FIELD # 03
+      DATA IS <commit                                                      >
+ * FIELD # 04
+      DATA IS <Makefile.am                                                 >
+ 
+READ RECORD 0006
+003 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <687                                                         >
+ * FIELD # 02
+      DATA IS <cvs                                                         >
+ * FIELD # 03
+      DATA IS <diff                                                        >
+ 
+READ RECORD 0007
+004 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <688                                                         >
+ * FIELD # 02
+      DATA IS <cvs                                                         >
+ * FIELD # 03
+      DATA IS <commit                                                      >
+ * FIELD # 04
+      DATA IS <Makefile.*                                                  >
+ 
+READ RECORD 0008
+003 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <689                                                         >
+ * FIELD # 02
+      DATA IS <cvs                                                         >
+ * FIELD # 03
+      DATA IS <diff                                                        >
+ 
+READ RECORD 0009
+004 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <690                                                         >
+ * FIELD # 02
+      DATA IS <cvs                                                         >
+ * FIELD # 03
+      DATA IS <add                                                         >
+ * FIELD # 04
+      DATA IS <test00?.sh                                                  >
+ 
+READ RECORD 0010
+004 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <691                                                         >
+ * FIELD # 02
+      DATA IS <cvs                                                         >
+ * FIELD # 03
+      DATA IS <commit                                                      >
+ * FIELD # 04
+      DATA IS <test00?.sh                                                  >
+ 
+READ RECORD 0011
+004 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <692                                                         >
+ * FIELD # 02
+      DATA IS <cvs                                                         >
+ * FIELD # 03
+      DATA IS <add                                                         >
+ * FIELD # 04
+      DATA IS <test002*                                                    >
+ 
+READ RECORD 0012
+004 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <693                                                         >
+ * FIELD # 02
+      DATA IS <cvs                                                         >
+ * FIELD # 03
+      DATA IS <commit                                                      >
+ * FIELD # 04
+      DATA IS <test002*                                                    >
+ 
+READ RECORD 0013
+002 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <694                                                         >
+ * FIELD # 02
+      DATA IS <lf                                                          >
+ 
+READ RECORD 0014
+003 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <695                                                         >
+ * FIELD # 02
+      DATA IS <cat                                                         >
+ * FIELD # 03
+      DATA IS <test002.cmp                                                 >
+ 
+READ RECORD 0015
+004 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <696                                                         >
+ * FIELD # 02
+      DATA IS <diff                                                        >
+ * FIELD # 03
+      DATA IS <test001.cmp                                                 >
+ * FIELD # 04
+      DATA IS <test002.cmp                                                 >
+ 
+READ RECORD 0016
+003 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <697                                                         >
+ * FIELD # 02
+      DATA IS <make                                                        >
+ * FIELD # 03
+      DATA IS <check                                                       >
+ 
+READ RECORD 0017
+002 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <698                                                         >
+ * FIELD # 02
+      DATA IS <lf                                                          >
+ 
+READ RECORD 0018
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <398                                                         >
+ * FIELD # 07
+      DATA IS <Jun                                                         >
+ * FIELD # 08
+      DATA IS <27                                                          >
+ * FIELD # 09
+      DATA IS <13:34                                                       >
+ * FIELD # 10
+      DATA IS <template_main.cob                                           >
+ 
+READ RECORD 0019
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <12489                                                       >
+ * FIELD # 07
+      DATA IS <Jun                                                         >
+ * FIELD # 08
+      DATA IS <13                                                          >
+ * FIELD # 09
+      DATA IS <11:00                                                       >
+ * FIELD # 10
+      DATA IS <template_screen.cob                                         >
+ 
+READ RECORD 0020
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <54452                                                       >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <14:24                                                       >
+ * FIELD # 10
+      DATA IS <template_screen.o                                           >
+ 
+READ RECORD 0021
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <1699                                                        >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <13:49                                                       >
+ * FIELD # 10
+      DATA IS <test001.cmp                                                 >
+ 
+READ RECORD 0022
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <4942                                                        >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <13:47                                                       >
+ * FIELD # 10
+      DATA IS <test001.cob                                                 >
+ 
+READ RECORD 0023
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <259                                                         >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <13:49                                                       >
+ * FIELD # 10
+      DATA IS <test001.csv                                                 >
+ 
+READ RECORD 0024
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rwxr-xr-x                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <21935                                                       >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <14:24                                                       >
+ * FIELD # 10
+      DATA IS <test001.exe                                                 >
+ 
+READ RECORD 0025
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <1699                                                        >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <14:24                                                       >
+ * FIELD # 10
+      DATA IS <test001.out                                                 >
+ 
+READ RECORD 0026
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <36                                                          >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <14:17                                                       >
+ * FIELD # 10
+      DATA IS <test001.sh                                                  >
+ 
+READ RECORD 0027
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <1758                                                        >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <14:13                                                       >
+ * FIELD # 10
+      DATA IS <test002.cmp                                                 >
+ 
+READ RECORD 0028
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <5499                                                        >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <14:10                                                       >
+ * FIELD # 10
+      DATA IS <test002.cob                                                 >
+ 
+READ RECORD 0029
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <309                                                         >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <14:04                                                       >
+ * FIELD # 10
+      DATA IS <test002.csv                                                 >
+ 
+READ RECORD 0030
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rwxr-xr-x                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <23237                                                       >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <14:24                                                       >
+ * FIELD # 10
+      DATA IS <test002.exe                                                 >
+ 
+READ RECORD 0031
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <1758                                                        >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <14:24                                                       >
+ * FIELD # 10
+      DATA IS <test002.out                                                 >
+ 
+READ RECORD 0032
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <36                                                          >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <14:17                                                       >
+ * FIELD # 10
+      DATA IS <test002.sh                                                  >
+ 
+READ RECORD 0033
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <384                                                         >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <14:25                                                       >
+ * FIELD # 10
+      DATA IS <test003.txt                                                 >
+ 
+READ RECORD 0034
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-r--r--                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <1026                                                        >
+ * FIELD # 07
+      DATA IS <Jun                                                         >
+ * FIELD # 08
+      DATA IS <27                                                          >
+ * FIELD # 09
+      DATA IS <13:37                                                       >
+ * FIELD # 10
+      DATA IS <testcurses.cob                                              >
+ 
+READ RECORD 0035
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rwxr-xr-x                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <17323                                                       >
+ * FIELD # 07
+      DATA IS <Jul                                                         >
+ * FIELD # 08
+      DATA IS <5                                                           >
+ * FIELD # 09
+      DATA IS <14:24                                                       >
+ * FIELD # 10
+      DATA IS <testcurses.exe                                              >
+ 
+READ RECORD 0036
+010 COLUMNS FOUND.
+ * FIELD # 01
+      DATA IS <-rw-------                                                  >
+ * FIELD # 02
+      DATA IS <1                                                           >
+ * FIELD # 03
+      DATA IS <snark                                                       >
+ * FIELD # 04
+      DATA IS <Domain                                                      >
+ * FIELD # 05
+      DATA IS <Users                                                       >
+ * FIELD # 06
+      DATA IS <833                                                         >
+ * FIELD # 07
+      DATA IS <Jun                                                         >
+ * FIELD # 08
+      DATA IS <27                                                          >
+ * FIELD # 09
+      DATA IS <13:36                                                       >
+ * FIELD # 10
+      DATA IS <themain.cob                                                 >
+ 

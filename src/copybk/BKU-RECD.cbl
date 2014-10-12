@@ -1,0 +1,106 @@
+*>********************************************************************************
+*>  THIS IS THE FORMAT OF THE BACKUP FILE (SEQUENTIAL ASCII TEXT FILE)
+*>********************************************************************************
+*>  01  BKU-RECORD.
+        10  BKU-HEADER.
+            15  BKU-FILE-TYPE               PIC XX.
+            15  BKU-RECD-TYPE               PIC XX.
+            15  BKU-RECD-VERSION            PIC 99.
+            15  BKU-RECD-LENGTH             PIC 9999.
+        10  BKU-DETAIL                      PIC X(4086).
+        10  BKU-SC-DETAIL         REDEFINES BKU-DETAIL.
+            15  BKU-SC-NAME                 PIC X(16).
+            15  BKU-SC-DESCRIPTION          PIC X(50).
+            15  BKU-SC-AUTHOR               PIC X(32).
+            15  BKU-SC-NOTES                PIC X(50).
+            15  BKU-SC-TITLE                PIC X(50).
+            15  BKU-SC-SHOW-DATE            PIC X.
+            15  BKU-SC-SHOW-TIME            PIC X.
+            15  BKU-SC-ACTION-REQUIRED      PIC X.
+            15  BKU-SC-COLUMNS-MIN          PIC 999.
+            15  BKU-SC-LINES-MIN            PIC 999.
+            15  BKU-SC-PAIRS                PIC 999.
+            15  BKU-SC-WS-SECTION           PIC X(16).
+            15  BKU-SC-LINKAGE-SECTION      PIC X(16).
+            15  BKU-SC-PROCEDURE-DIVISION   PIC X(16).
+            15  BKU-SC-STRIP-CHARACTER      PIC X.
+        10  BKU-FD-DETAIL         REDEFINES BKU-DETAIL.
+            15  BKU-FD-SCREEN-NAME          PIC X(16).
+            15  BKU-FD-FDEF-NO              PIC 999.
+            15  BKU-FD-COBOL-NAME           PIC X(32).
+            15  BKU-FD-DESCRIPTION          PIC X(40).
+            15  BKU-FD-LINE                 PIC 999.
+            15  BKU-FD-COLUMN               PIC 999.
+            15  BKU-FD-BUFFER-LENGTH        PIC 9999.
+            15  BKU-FD-WINDOW-LENGTH        PIC 9999.
+            15  BKU-FD-CLEAR                PIC X.
+            15  BKU-FD-UPPERCASE            PIC X.
+            15  BKU-FD-PASSWORD             PIC X.
+            15  BKU-FD-NOT-BLANK            PIC X.
+            15  BKU-FD-YN                   PIC X.
+            15  BKU-FD-RES-CHARSET          PIC X(8).
+            15  BKU-FD-SIGNED               PIC X.
+            15  BKU-FD-DIGITS               PIC 999.
+            15  BKU-FD-DECIMALS             PIC 999.
+            15  BKU-FD-VERIFY               PIC X.
+            15  BKU-FD-VISIBLE              PIC X.
+            15  BKU-FD-IGNORE-CHANGES       PIC X.
+            15  BKU-FD-INPUT-SEQ            PIC X.
+            15  BKU-FD-ACTION               PIC X.
+            15  BKU-FD-HELP                 PIC X(80).
+            15  BKU-FD-READ-ONLY            PIC X.
+            15  BKU-FD-COMP-TYPE            PIC 99.
+            15  BKU-FD-MENU-REF             PIC X(16).
+            15  BKU-FD-ACTION-EDIT          PIC X.
+        10  BKU-BG-DETAIL         REDEFINES BKU-DETAIL.
+            15  BKU-BG-NAME                 PIC X(16).
+            15  BKU-BG-SEGMENT-NO           PIC 999.
+            15  BKU-BG-LINE                 PIC 999.
+            15  BKU-BG-COLUMN               PIC 999.
+            15  BKU-BG-LENGTH               PIC 99.
+            15  BKU-BG-SEGMENT              PIC X(32).
+            15  BKU-BG-ATTRIBUTE            PIC 9(9).
+            15  BKU-BG-COLOUR-PAIR          PIC 9999.
+            15  BKU-BG-HEX-SEGMENT          PIC X(64).
+        10  BKU-FS-DETAIL         REDEFINES BKU-DETAIL.
+            15  BKU-FS-SCREEN-NAME          PIC X(16).
+            15  BKU-FS-STATE-NO             PIC 999.
+            15  BKU-FS-FIELD-NO             PIC 999.
+            15  BKU-FS-BACK-TO              PIC 999.
+            15  BKU-FS-FORWARD-TO           PIC 999.
+            15  BKU-FS-ESCAPE-TO            PIC 999.
+            15  BKU-FS-SLASH-TO             PIC 999.
+            15  BKU-FS-GROUP-HEADER         PIC X.
+            15  BKU-FS-STATE-COBOL-NAME     PIC X(24).
+        10  BKU-CS-DETAIL         REDEFINES BKU-DETAIL.
+            15  BKU-CS-NAME                 PIC X(8).
+            15  BKU-CS-DATA                 PIC X(80).
+        10  BKU-MU-DETAIL         REDEFINES BKU-DETAIL.
+            15  BKU-MU-MENU-NAME            PIC X(16).
+            15  BKU-MU-MENU-TYPE            PIC 99.
+            15  BKU-MU-TITLE                PIC X(64).
+            15  BKU-MU-TOP-LEFT-LINE-NO     PIC 999.
+            15  BKU-MU-TOP-LEFT-COLUMN-NO   PIC 999.
+            15  BKU-MU-OPT-ONEVALUE         PIC X.
+            15  BKU-MU-OPT-ROWMAJOR         PIC X.
+            15  BKU-MU-OPT-IGNORECASE       PIC X.
+            15  BKU-MU-OPT-SHOWDESC         PIC X.
+            15  BKU-MU-OPT-NONCYCLIC        PIC X.
+            15  BKU-MU-OPT-SHOWMATCH        PIC X.
+            15  BKU-MU-OPT-ROWS             PIC 99.
+            15  BKU-MU-OPT-COLS             PIC 99.
+            15  BKU-MU-MODULE-NAME          PIC X(16).
+            15  BKU-MU-ITEM-LIMIT           PIC 9999.
+        10  BKU-IT-DETAIL         REDEFINES BKU-DETAIL.
+            15  BKU-IT-MENU-NAME            PIC X(16).
+            15  BKU-IT-NUMBER               PIC 9999.
+            15  BKU-IT-ITEM-NAME            PIC X(32).
+            15  BKU-IT-TEXT                 PIC X(64).
+            15  BKU-IT-SELECTABLE           PIC X.
+        10  BKU-MR-DETAIL         REDEFINES BKU-DETAIL.
+            15  BKU-MR-SCREEN-NAME          PIC X(16).
+            15  BKU-MR-MENU-NAME            PIC X(16).
+*>********************************************************************************
+*>  END OF THE BACKUP RECORD DEFINITION 
+*>********************************************************************************
+

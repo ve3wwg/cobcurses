@@ -1,0 +1,24 @@
+*** TEST CASE 0 ***
+  NO PRIOR LENGTH GIVEN AND LENGTH IS OMITTED..
+  RETURN-CODE = +000000006
+    --- CORRECT ---
+ 
+*** TEST CASE 1 ***
+  RETURN-CODE = +000000000
+    --- CORRECT ---
+BEFORE '${TEST_CASE_1}/$WHATEVER$                                                       '
+AFTER  'CASE001/$WHATEVER$                                                              '
+ 
+*** TEST CASE 2 ***
+  RETURN-CODE = +000000000
+    --- CORRECT ---
+BEFORE '${TEST_CASE_2}/${TEST_CASE_1}/END                                               '
+AFTER  '/usr/local/cobcurses/data/somwhere/CASE001/END                                  '
+ 
+*** TEST CASE 3 ***
+  RETURN-CODE = +000000004
+    --- CORRECT ---
+BEFORE '${TEST_CASE_2}/TRUNCATES      '
+AFTER  '/usr/local/cobcurses/data/somw'
+ 
+FAILURES DETECTED: 0000

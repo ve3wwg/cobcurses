@@ -1,0 +1,125 @@
+        IDENTIFICATION DIVISION.
+        PROGRAM-ID. SD002033.
+      *>
+      *> THIS SUBPROGRAM IS USED TO LOAD THE SCREEN IMAGE FROM THE SCREEN
+      *> BACKGROUND INDEXED FILE. THE SCREEN BACKGROUND INFORMATION IS SAVED
+      *> AS TEXT FRAGMENTS IN THE INDEXED FILE. THESE FRAGMENTS ARE ASSEMBLED
+      *> AND RETURNED IN THE SCREEN-IMAGE STRUCTURE.
+      *>
+      *> THE INPUT IS THE SCREEN NAME, FOUND IN THE SCREEN-RECORD ARGUMENT,
+      *> AND THE INDEXED FILE NAME IS PROVIDED AS INPUT IN SCRNBG-FILE-NAME.
+      *>
+        ENVIRONMENT DIVISION.
+        INPUT-OUTPUT SECTION.
+        FILE-CONTROL.
+
+            SELECT SCRNBG-FILE
+                ASSIGN TO SCRNBG-FILE-NAME
+                ORGANIZATION IS INDEXED
+                ACCESS IS DYNAMIC
+                RECORD KEY IS SCRBG-KEY.
+
+        DATA DIVISION.
+        FILE SECTION.
+
+        FD  SCRNBG-FILE.
+        01  SCRNBG-RECORD.
+            COPY SCREEN-BG.
+        
+        WORKING-STORAGE SECTION.
+
+        01  WORK-AREAS.
+            10  SEGMENTS-REMAINING          PIC X.
+            10  LINEX                       PIC 999.
+            10  NUM-COLUMN                  PIC 9999 COMP.
+            10  NUM-OTLEN                   PIC 9999 COMP.
+
+        LINKAGE SECTION.
+
+        01  SCREEN-RECORD.
+            COPY SCREEN-01.
+
+        01  SCREEN-IMAGE.
+            COPY SCREEN-SI.
+
+        77  SCRNBG-FILE-NAME                PIC X(256).
+
+        PROCEDURE DIVISION
+          USING
+            BY REFERENCE SCREEN-RECORD,
+            BY REFERENCE SCREEN-IMAGE,
+            SCRNBG-FILE-NAME.
+
+        MAIN-PROGRAM.
+            PERFORM 1000-INITIALIZE.
+            PERFORM 5000-PROCESS.
+            PERFORM 9000-FINALIZE.
+            EXIT PROGRAM.
+
+        1000-INITIALIZE.
+            OPEN INPUT SCRNBG-FILE.
+            PERFORM 5100-INITIALIZE-SCREEN-IMAGE.
+            EXIT.
+
+        5000-PROCESS.
+            PERFORM 5200-INITIALIZE-KEY.
+            START SCRNBG-FILE KEY IS >= SCRBG-KEY
+                INVALID KEY
+                    MOVE 'N' TO SEGMENTS-REMAINING
+                NOT INVALID KEY
+                    MOVE 'Y' TO SEGMENTS-REMAINING
+            END-START.
+            PERFORM UNTIL SEGMENTS-REMAINING = 'N'
+                READ SCRNBG-FILE NEXT RECORD
+                    AT END
+                        MOVE 'N' TO SEGMENTS-REMAINING
+                    NOT AT END
+                        IF SCRBG-NAME NOT = SCN-NAME
+                            MOVE 'N' TO SEGMENTS-REMAINING
+                        END-IF
+                END-READ
+                IF SEGMENTS-REMAINING = 'Y' THEN
+                    PERFORM 5300-LOAD-SEGMENT
+                END-IF
+            END-PERFORM.
+            EXIT.
+            
+        5100-INITIALIZE-SCREEN-IMAGE.
+            INITIALIZE SCREEN-IMAGE.
+            MOVE SCN-COLUMNS-MIN TO SCREEN-COLUMNS.
+            MOVE SCN-LINES-MIN TO SCREEN-LINES.
+            MOVE 1 TO SCREEN-LAST-LINE, SCREEN-LAST-COLUMN.
+            IF SCN-TITLE NOT = SPACES THEN
+                MOVE 'Y' TO SCREEN-HAS-TITLE
+            ELSE
+                MOVE 'N' TO SCREEN-HAS-TITLE
+            END-IF.
+            MOVE SCN-SHOW-DATE TO SCREEN-SHOW-DATE.
+            MOVE SCN-SHOW-TIME TO SCREEN-SHOW-TIME.
+            PERFORM VARYING LINEX FROM 1 BY 1
+                UNTIL LINEX > 50
+                MOVE SPACES TO SCREEN-LINE(LINEX)
+            END-PERFORM.
+            EXIT.
+
+        5200-INITIALIZE-KEY.
+            MOVE SCN-NAME TO SCRBG-NAME.
+            MOVE ZERO TO SCRBG-SEGMENT-NO.
+            EXIT.
+
+        5300-LOAD-SEGMENT.
+            MOVE SCRBG-LINE TO LINEX.
+            MOVE SCRBG-COLUMN TO NUM-COLUMN.
+            MOVE SCRBG-LENGTH TO NUM-OTLEN.
+            MOVE SCRBG-SEGMENT
+                TO SCREEN-LINE(LINEX), (NUM-COLUMN:NUM-OTLEN).
+            EXIT.
+
+        9000-FINALIZE.
+            CLOSE SCRNBG-FILE.
+            MOVE SCN-LINES-MIN TO SCREEN-LAST-LINE.
+            SUBTRACT 1 FROM SCREEN-LAST-LINE.
+            MOVE SCN-COLUMNS-MIN TO SCREEN-LAST-COLUMN.
+            EXIT.
+
+        END PROGRAM SD002033.

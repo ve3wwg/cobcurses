@@ -1,0 +1,1606 @@
+ 
+INPUT TEXT:   '.0005uF                         '
+UNITS CONFIG: '-lcase,p=-12,uu=-12,u=-6:-1/-6,-asis,-append=F              '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '500pF                           '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '500pF                           '
+REPROCESSING '500pF                           ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '500pF                           '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '.002                            '
+UNITS CONFIG: '-lcase,p=-12,uu=-12,u=-6:-1/-6,-asis,-append=F              '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '2000uF                          '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '2000uF                          '
+REPROCESSING '2000uF                          ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '2000uF                          '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1                               '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1F                              '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1F                              '
+REPROCESSING '1F                              ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1F                              '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '.1                              '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.1F                            '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.1F                            '
+REPROCESSING '0.1F                            ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.1F                            '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '.01                             '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.01F                           '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.01F                           '
+REPROCESSING '0.01F                           ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.01F                           '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '.001                            '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.001F                          '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.001F                          '
+REPROCESSING '0.001F                          ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.001F                          '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '.0001                           '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.1E-3F                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.1E-3F                         '
+REPROCESSING '0.1E-3F                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.1E-3F                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '.00001                          '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '10uF                            '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '10uF                            '
+REPROCESSING '10uF                            ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '10uF                            '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '.000001                         '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1uF                             '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1uF                             '
+REPROCESSING '1uF                             ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1uF                             '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '.0000001                        '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.1uF                           '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.1uF                           '
+REPROCESSING '0.1uF                           ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.1uF                           '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '.00000001                       '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.01uF                          '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.01uF                          '
+REPROCESSING '0.01uF                          ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.01uF                          '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '.000000001                      '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1000uuF                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1000uuF                         '
+REPROCESSING '1000uuF                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1000uuF                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '.0000000001                     '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '100uuF                          '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '100uuF                          '
+REPROCESSING '100uuF                          ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '100uuF                          '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '0.0000000001                    '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '100uuF                          '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '100uuF                          '
+REPROCESSING '100uuF                          ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '100uuF                          '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '0                               '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0F                              '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0F                              '
+REPROCESSING '0F                              ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0F                              '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '10.0                            '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '10F                             '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '10F                             '
+REPROCESSING '10F                             ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '10F                             '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '100.0                           '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '100F                            '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '100F                            '
+REPROCESSING '100F                            ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '100F                            '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1000.0                          '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1000F                           '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1000F                           '
+REPROCESSING '1000F                           ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1000F                           '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '10000.0                         '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '10000F                          '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '10000F                          '
+REPROCESSING '10000F                          ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '10000F                          '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '100000.0                        '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '100000F                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '100000F                         '
+REPROCESSING '100000F                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '100000F                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1000000.0                       '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1000000F                        '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1000000F                        '
+REPROCESSING '1000000F                        ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1000000F                        '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '10000000.0                      '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '10E+6F                          '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1E+7F                           '
+REPROCESSING '10E+6F                          ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '10E+6F                          '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '100000000.0                     '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '100E+6F                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1E+8F                           '
+REPROCESSING '100E+6F                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '100E+6F                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1000000000.0                    '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1E+9F                           '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1E+9F                           '
+REPROCESSING '1E+9F                           ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1E+9F                           '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '10000000000.0                   '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '10E+9F                          '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1E+10F                          '
+REPROCESSING '10E+9F                          ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '10E+9F                          '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '   2     u                      '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '2uF                             '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '2uF                             '
+REPROCESSING '2uF                             ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '2uF                             '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   ' 25   uf                        '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '25uF                            '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '25uF                            '
+REPROCESSING '25uF                            ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '25uF                            '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '   26    u F                    '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '26uF                            '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '26uF                            '
+REPROCESSING '26uF                            ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '26uF                            '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  27  uFarads                   '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '27uF                            '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '27uF                            '
+REPROCESSING '27uF                            ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '27uF                            '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '   28  u farads                 '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '28uF                            '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '28uF                            '
+REPROCESSING '28uF                            ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '28uF                            '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   ' 29   uuf                       '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '29uuF                           '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '29uuF                           '
+REPROCESSING '29uuF                           ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '29uuF                           '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   ' .3 uf                          '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.3uF                           '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.3uF                           '
+REPROCESSING '0.3uF                           ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.3uF                           '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   ' 310  picofarads                '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '310uuF                          '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '310uuF                          '
+REPROCESSING '310uuF                          ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '310uuF                          '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  3,11.00000 pF                 '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '311uuF                          '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '311uuF                          '
+REPROCESSING '311uuF                          ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '311uuF                          '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  3.12E0 p                      '
+UNITS CONFIG: '-asis,uu=-12,u=-6,p=-12,-append=F                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '3.12uuF                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '3.12uuF                         '
+REPROCESSING '3.12uuF                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '3.12uuF                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '3.14PF                          '
+UNITS CONFIG: '-lcase,uu=-12,u=-6,p=-12,-asis,-append=F                    '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '3.14uuF                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '3.14uuF                         '
+REPROCESSING '3.14uuF                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '3.14uuF                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '3.16uuf                         '
+UNITS CONFIG: '-lcase,uu=-12,u=-6,p=-12,-asis,-append=F                    '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '3.16uuF                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '3.16uuF                         '
+REPROCESSING '3.16uuF                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '3.16uuF                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '32,000F                         '
+UNITS CONFIG: '-lcase,uu=-12,u=-6,p=-12,-asis,-append=F                    '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '32000F                          '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '32000F                          '
+REPROCESSING '32000F                          ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '32000F                          '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  32.0000E+003   Farads         '
+UNITS CONFIG: '-lcase,uu=-12,u=-6,p=-12,-asis,-append=F                    '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '32000F                          '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '32000F                          '
+REPROCESSING '32000F                          ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '32000F                          '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1ohm                            '
+UNITS CONFIG: '-                                                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1                               '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1                               '
+REPROCESSING '1                               ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1                               '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '   1.05                         '
+UNITS CONFIG: '-                                                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.05                            '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.05                            '
+REPROCESSING '1.05                            ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.05                            '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  -2.5                          '
+UNITS CONFIG: '-                                                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '-2.5                            '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '-2.5                            '
+REPROCESSING '-2.5                            ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '-2.5                            '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   ' 6.08e-3 ohms                   '
+UNITS CONFIG: '-                                                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.00608                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.00608                         '
+REPROCESSING '0.00608                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.00608                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  .45kOhms                      '
+UNITS CONFIG: '-                                                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.45                            '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.45                            '
+REPROCESSING '0.45                            ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.45                            '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1,200ohms                       '
+UNITS CONFIG: '-                                                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1200                            '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1200                            '
+REPROCESSING '1200                            ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1200                            '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1.2k                            '
+UNITS CONFIG: '-                                                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2                             '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2                             '
+REPROCESSING '1.2                             ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2                             '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  1.5 MegOhms                   '
+UNITS CONFIG: '-                                                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.5                             '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.5                             '
+REPROCESSING '1.5                             ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  <<<UNITS CONFIG OMITTED>>>
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.5                             '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1ohm                            '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1ohms                           '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1ohms                           '
+REPROCESSING '1ohms                           ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1ohms                           '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '   1.05                         '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.05ohms                        '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.05ohms                        '
+REPROCESSING '1.05ohms                        ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.05ohms                        '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  -2.5                          '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '-2.5ohms                        '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '-2.5ohms                        '
+REPROCESSING '-2.5ohms                        ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '-2.5ohms                        '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   ' 6.08e-3 ohms                   '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.00608ohms                     '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.00608ohms                     '
+REPROCESSING '0.00608ohms                     ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.00608ohms                     '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  .45kOhms                      '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '450ohms                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '450ohms                         '
+REPROCESSING '450ohms                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '450ohms                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1,200ohms                       '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kohms                        '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kohms                        '
+REPROCESSING '1.2kohms                        ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kohms                        '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1.2k                            '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kohms                        '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kohms                        '
+REPROCESSING '1.2kohms                        ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kohms                        '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  1.5 MegOhms                   '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.5megohms                      '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.5megohms                      '
+REPROCESSING '1.5megohms                      ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.5megohms                      '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1ohm                            '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=Ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1Ohms                           '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1Ohms                           '
+REPROCESSING '1Ohms                           ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1Ohms                           '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '   1.05                         '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=Ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.05Ohms                        '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.05Ohms                        '
+REPROCESSING '1.05Ohms                        ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.05Ohms                        '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  -2.5                          '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=Ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '-2.5Ohms                        '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '-2.5Ohms                        '
+REPROCESSING '-2.5Ohms                        ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '-2.5Ohms                        '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   ' 6.08e-3 ohms                   '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=Ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.00608Ohms                     '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.00608Ohms                     '
+REPROCESSING '0.00608Ohms                     ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.00608Ohms                     '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  .45kOhms                      '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=Ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '450Ohms                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '450Ohms                         '
+REPROCESSING '450Ohms                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '450Ohms                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1,200ohms                       '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=Ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kOhms                        '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kOhms                        '
+REPROCESSING '1.2kOhms                        ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kOhms                        '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1.2k                            '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=Ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kOhms                        '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kOhms                        '
+REPROCESSING '1.2kOhms                        ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kOhms                        '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  1.5 MegOhms                   '
+UNITS CONFIG: '-lcase,k=3,Meg=6,-asis,-append=Ohms                         '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.5megOhms                      '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.5megOhms                      '
+REPROCESSING '1.5megOhms                      ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.5megOhms                      '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1ohm                            '
+UNITS CONFIG: '-lcase,k=3,Meg=6,M=6,-append=Ohms                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1ohms                           '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1ohms                           '
+REPROCESSING '1ohms                           ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1ohms                           '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '   1.05                         '
+UNITS CONFIG: '-lcase,k=3,Meg=6,M=6,-append=Ohms                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.05ohms                        '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.05ohms                        '
+REPROCESSING '1.05ohms                        ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.05ohms                        '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  -2.5                          '
+UNITS CONFIG: '-lcase,k=3,Meg=6,M=6,-append=Ohms                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '-2.5ohms                        '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '-2.5ohms                        '
+REPROCESSING '-2.5ohms                        ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '-2.5ohms                        '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   ' 6.08e-3 ohms                   '
+UNITS CONFIG: '-lcase,k=3,Meg=6,M=6,-append=Ohms                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.00608ohms                     '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.00608ohms                     '
+REPROCESSING '0.00608ohms                     ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.00608ohms                     '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  .45kOhms                      '
+UNITS CONFIG: '-lcase,k=3,Meg=6,M=6,-append=Ohms                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '450ohms                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '450ohms                         '
+REPROCESSING '450ohms                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '450ohms                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1,200ohms                       '
+UNITS CONFIG: '-lcase,k=3,Meg=6,M=6,-append=Ohms                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kohms                        '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kohms                        '
+REPROCESSING '1.2kohms                        ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kohms                        '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '1.2k                            '
+UNITS CONFIG: '-lcase,k=3,Meg=6,M=6,-append=Ohms                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kohms                        '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kohms                        '
+REPROCESSING '1.2kohms                        ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.2kohms                        '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '  1.5 MegOhms                   '
+UNITS CONFIG: '-lcase,k=3,Meg=6,M=6,-append=Ohms                           '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.5megohms                      '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.5megohms                      '
+REPROCESSING '1.5megohms                      ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '1.5megohms                      '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '.001uF                          '
+UNITS CONFIG: '-asis,p=-12,uu=-12,u=-6:-3/-9,-append=F                     '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.001uF                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.001uF                         '
+REPROCESSING '0.001uF                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.001uF                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '123.6uF                         '
+UNITS CONFIG: '-asis,p=-12,uu=-12,u=-6:-3/-9,-append=F                     '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '123.6uF                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '123.6uF                         '
+REPROCESSING '123.6uF                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '123.6uF                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '23.68uf                         '
+UNITS CONFIG: '-asis,p=-12,uu=-12,u=-6:-3/-9,-append=F                     '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '23.68uF                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '23.68uF                         '
+REPROCESSING '23.68uF                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '23.68uF                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '3.68  uf                        '
+UNITS CONFIG: '-asis,p=-12,uu=-12,u=-6:-3/-9,-append=F                     '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '3.68uF                          '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '3.68uF                          '
+REPROCESSING '3.68uF                          ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '3.68uF                          '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '0.684  uf                       '
+UNITS CONFIG: '-asis,p=-12,uu=-12,u=-6:-3/-9,-append=F                     '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.684uF                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.684uF                         '
+REPROCESSING '0.684uF                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.684uF                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '0.0845 uf                       '
+UNITS CONFIG: '-asis,p=-12,uu=-12,u=-6:-3/-9,-append=F                     '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.0845uF                        '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.0845uF                        '
+REPROCESSING '0.0845uF                        ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.0845uF                        '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '0.002 u                         '
+UNITS CONFIG: '-asis,p=-12,uu=-12,u=-6:-3/-9,-append=F                     '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.002uF                         '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.002uF                         '
+REPROCESSING '0.002uF                         ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '0.002uF                         '
+  REPROCESSED RESULTS MATCHED.
+ 
+ 
+INPUT TEXT:   '0.00065 uf                      '
+UNITS CONFIG: '-asis,p=-12,uu=-12,u=-6:-3/-9,-append=F                     '
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '650pF                           '
+  ((( FORMATTING RESULT, ENG FLAG=N, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '650pF                           '
+REPROCESSING '650pF                           ' AS INPUT:
+  ((( FORMATTING RESULT, ENG FLAG=Y, DIGITS=14 )))
+  RETURN-CODE= +000000000
+  -- AS EXPECTED : SUCCESSFUL --
+RESULT :      '650pF                           '
+  REPROCESSED RESULTS MATCHED.
+ 
+--
+FAILURES DETECTED: 0000

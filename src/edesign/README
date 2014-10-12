@@ -1,0 +1,32 @@
+E-Design
+========
+
+1. What is it?
+
+A. This is an application framework using CobCurses,
+for use by Electronic hobbyists.
+
+
+2. What is its status?
+
+A. This is a work in progress and has just been
+started. I had hoped to have more of this sample
+application completed before the 0.95 release. But
+unfortunately I now have some real work to do, that
+will keep me occupied for the moment. Look for
+updates in CVS in the future, or in the next
+release.
+
+You may be able to borrow some ideas from this
+project area.
+
+3. How do I build it?
+
+A. You must have CobCurses 0.95 *INSTALLED* first.
+The Makefile provided assumes that this release is
+installed. Once that is done, just change to this
+directory and:
+
+   i)   make clean (if necessary)
+   ii)  make
+   iii) ./edesign

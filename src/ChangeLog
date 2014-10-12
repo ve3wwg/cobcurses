@@ -1,0 +1,52 @@
+ChangeLog:
+==========
+
+November, 2012
+
+Released as version 0.96, this is a maintenance release,
+which was tested with the newer Open Cobol 1.1 compiler.
+
+A number of identifiers were causing compile errors, due
+to their length (exceeding 32 characters). As a result,
+the following names were changed:
+
+    COBCURSES-REGISTER-CSV-COLUMN-HEADING
+      was changed to
+    COBCURSES-REGISTER-CSV-COL-HDG
+
+    COBCURSES-REGISTER-CSV-COLUMN-NO
+      was changed to
+    COBCURSES-REGISTER-CSV-COL-NO
+
+    NC-SELECT-FIELD-AND-OPTIONS
+      was changed to
+    NC-SELECT-FIELD-AND-OPTS
+
+    COBCURSES-MSG-STRIP-BLANKS-INTERNAL
+      was changed to 
+    COBCURSES-MSG-STRIP-BLANKS-INT
+
+    COBCURSES-ERROR-MESSAGE-OVERRIDE
+      was changed to
+    COBCURSES-ERROR-MSG-OVERRIDE
+
+Also corrected a bug as it pertained to a Linux build, tested under
+Ubuntu jaunty. The library routine lib/dynstr.c was responsible for
+converting string values to COMP-1 for cobol use, and was failing. The
+reason was that while strtof() was configured as "available", but the
+function prototype was not defined unless __USE_ISOC99 was defined.
+Rather than break functionality on other platforms, the code now uses
+strtod() which is reliably defined. Test test012 now passes ok.
+
+
+October, 2007
+
+The version of the software that you have here is
+Release 0.95. The remainder of the ChangeLog is
+found at the CobCurses wiki:
+
+http://cobcurses.wiki.sourceforge.net/ChangeLog
+
+There you will find all of the up-to-date
+information about CobCurses releases.
+

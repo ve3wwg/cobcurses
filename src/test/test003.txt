@@ -1,0 +1,36 @@
+682      bogus  --comment " Does this \"quote\" correctly? " file1 file2
+683      cvs diff
+684      cvs commit do\ test
+685      cvs diff 
+686      cvs commit Makefile.am
+687      cvs diff
+688      cvs commit Makefile.*
+689      cvs diff
+690      cvs add test00?.sh
+691      cvs commit test00?.sh
+692      cvs add test002*
+693      cvs commit test002*
+694      lf
+695      cat test002.cmp
+696      diff test001.cmp test002.cmp
+697      make check
+698      lf
+-rw-r--r--  1 snark Domain Users   398 Jun 27 13:34 template_main.cob
+-rw-r--r--  1 snark Domain Users 12489 Jun 13 11:00 template_screen.cob
+-rw-r--r--  1 snark Domain Users 54452 Jul  5 14:24 template_screen.o
+-rw-r--r--  1 snark Domain Users  1699 Jul  5 13:49 test001.cmp
+-rw-r--r--  1 snark Domain Users  4942 Jul  5 13:47 test001.cob
+-rw-r--r--  1 snark Domain Users   259 Jul  5 13:49 test001.csv
+-rwxr-xr-x  1 snark Domain Users 21935 Jul  5 14:24 test001.exe
+-rw-r--r--  1 snark Domain Users  1699 Jul  5 14:24 test001.out
+-rw-r--r--  1 snark Domain Users    36 Jul  5 14:17 test001.sh
+-rw-r--r--  1 snark Domain Users  1758 Jul  5 14:13 test002.cmp
+-rw-r--r--  1 snark Domain Users  5499 Jul  5 14:10 test002.cob
+-rw-r--r--  1 snark Domain Users   309 Jul  5 14:04 test002.csv
+-rwxr-xr-x  1 snark Domain Users 23237 Jul  5 14:24 test002.exe
+-rw-r--r--  1 snark Domain Users  1758 Jul  5 14:24 test002.out
+-rw-r--r--  1 snark Domain Users    36 Jul  5 14:17 test002.sh
+-rw-r--r--  1 snark Domain Users   384 Jul  5 14:25 test003.txt
+-rw-r--r--  1 snark Domain Users  1026 Jun 27 13:37 testcurses.cob
+-rwxr-xr-x  1 snark Domain Users 17323 Jul  5 14:24 testcurses.exe
+-rw-------  1 snark Domain Users   833 Jun 27 13:36 themain.cob

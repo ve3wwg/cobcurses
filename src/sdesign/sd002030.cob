@@ -1,0 +1,374 @@
+IDENTIFICATION DIVISION.
+PROGRAM-ID. SD002030.
+*>
+*> $Id: sd002030.cob,v 1.12 2007/10/30 19:36:47 ve3wwg Exp $
+*>
+*> Warren W. Gay
+*>
+*> THIS IS THE "SCREEN PAINTER" MODULE. THE USER IS ALLOWED TO NAVIGATE
+*> ALL OVER THE SCREEN, PAINTING TEXT WHERE EVER IT IS REQUIRED. 
+*> CONTROL RETURNS TO THE CALLER WHEN [RETURN] IS PRESSED.
+*>
+DATA DIVISION.
+WORKING-STORAGE SECTION.
+
+    COPY COBCATTR.
+    COPY COBCCOLOUR.
+    COPY COBCURSL.
+
+    01  CONFIGURATION-STUFF.
+        10  SCREEN-IMAGE-LINES-MAX          PIC 999 COMP VALUE 50.
+
+    01  WORKING-AREAS.
+        10  WK-LINEX                        PIC 999 COMP.
+        10  WK-TEMP1                        PIC 999 COMP.
+        10  WK-TEMP2                        PIC 999 COMP.
+        10  WK-NUMBER                       PIC 999.
+        10  FIRST-TIME                      PIC X.
+        10  SAVE-EDIT-ATTR                  PIC 9(18) COMP-5 SYNCHRONIZED.
+        10  TITLE-LINE-NO                   PIC 999 COMP-5 VALUE 1 SYNCHRONIZED.
+        10  TITLE-TEXT                      POINTER SYNCHRONIZED.
+        10  TITLE-COLOUR-PAIR               PIC 999 COMP-5 VALUE 1 SYNCHRONIZED.
+        10  TITLE-BOLD                      PIC X VALUE 'Y'.
+        10  TITLE-UNDERLINE                 PIC X VALUE 'Y'.
+        10  TITLE-REVERSE                   PIC X VALUE 'Y'.
+        10  SAVE-LINES                      PIC 999 COMP.
+        10  WS-GRAPH-CHAR                   PIC X VALUE X'09'.
+        10  WS-MENU-SELECTION               PIC X(8).
+        10  WS-MENU-SELLEN                  PIC 9999.
+
+    01  WS-GRAPHICS-CHARS.
+        05  WS-ACS.
+            10  PIC X                       VALUE ' '.
+            10  PIC X                       VALUE X'09'.
+            10  PIC X                       VALUE X'09'.
+            10  PIC X                       VALUE X'0A'.
+            10  PIC X                       VALUE X'01'.
+            10  PIC X                       VALUE X'03'.
+            10  PIC X                       VALUE X'02'.
+            10  PIC X                       VALUE X'04'.
+            10  PIC X                       VALUE X'05'.
+            10  PIC X                       VALUE X'06'.
+            10  PIC X                       VALUE X'07'.
+            10  PIC X                       VALUE X'08'.
+            05  WS-INS-CHARS      REDEFINES WS-ACS
+                PIC X                       OCCURS 1 TO 12 TIMES.
+
+    01  MSG-STATUS.
+        10  FILLER                          PIC X(16)       VALUE "Line & column # ".
+        10  MS-LINE-NUMBER                  PIC 999.
+        10  FILLER                          PIC X(1)        VALUE ",".
+        10  MS-COLUMN-NUMBER                PIC 999.
+        10  FILLER                          PIC X(1)        VALUE ".".
+
+    COPY GRPHMENU.
+
+LINKAGE SECTION.
+
+    COPY COBCURSG.
+
+    01  SCREEN-IMAGE.
+        COPY SCREEN-SI.
+
+    01  SCN-IMAGE-CHANGED                   PIC X.
+    01  SCN-STRIP-CHARACTER                 PIC X.
+
+PROCEDURE DIVISION USING
+    NC-COBCURSES, SCREEN-IMAGE, SCN-IMAGE-CHANGED, SCN-STRIP-CHARACTER.
+
+MAIN-PROGRAM.
+    PERFORM 1000-INITIALIZE.
+    PERFORM 5000-PROCESS.
+    PERFORM 9000-FINALIZE.
+    EXIT PROGRAM.
+
+1000-INITIALIZE.
+    MOVE 'Y' TO FIRST-TIME.
+    MOVE NC-EDIT-ATTR TO SAVE-EDIT-ATTR.
+    MOVE NC-ATTR-NORMAL TO NC-EDIT-ATTR.
+    MOVE ZERO TO NC-SCREEN-COUNT.
+
+    PERFORM NC-INIT.
+    PERFORM NC-CLEAR.
+
+    MOVE SCREEN-COLUMNS TO NC-FIELD-LENGTH.
+    MOVE SCREEN-COLUMNS TO NC-FIELD-WINLEN.
+    IF SCREEN-COLUMNS > NC-COLUMNS THEN
+        MOVE NC-COLUMNS TO NC-FIELD-LENGTH
+        MOVE NC-COLUMNS TO NC-FIELD-WINLEN
+    END-IF.
+
+    MOVE SCREEN-LINES TO SAVE-LINES.
+    IF SCREEN-LINES > NC-LINES
+        MOVE NC-LINES TO SCREEN-LINES
+    END-IF.
+
+    MOVE 2 TO NC-FIELD-Y.
+    MOVE 1 TO NC-FIELD-X.
+    MOVE 'N' TO NC-FIELD-CLEAR.
+    MOVE 'N' TO NC-FIELD-UPPERCASE.
+    MOVE 'N' TO NC-FIELD-MASK.
+    MOVE 'N' TO NC-FIELD-NOT-BLANK.
+    MOVE NULL TO NC-FIELD-RESTRICT.
+    MOVE 'N' TO NC-FIELD-SIGNED.
+    MOVE 0 TO NC-FIELD-DIGITS.
+    MOVE 0 TO NC-FIELD-DECPLACES.
+    MOVE 0 TO NC-FIELD-X-POS.
+    MOVE ' ' TO NC-FIELD-EXIT, NC-FIELD-FB.
+
+    PERFORM 6400-PAINT-SCREEN.
+
+    MOVE SCREEN-LAST-LINE TO NC-FIELD-Y.
+    MOVE SCREEN-LAST-COLUMN TO NC-FIELD-X-POS.
+
+    PERFORM 6200-FIX-Y.
+    MOVE "Press ENTER to end 'Paint Mode'; F1=Choose Graphic; F2=Plant Graphic char." TO NC-MSGBUF.
+    PERFORM NC-PUT-MESSAGE.
+    EXIT.
+
+5000-PROCESS.
+    PERFORM UNTIL NC-FIELD-EXIT = '0' OR NC-FIELD-EXIT = '5'
+        PERFORM 6000-GET-EDITED-LINE
+    END-PERFORM.
+    EXIT.
+
+6000-GET-EDITED-LINE.
+    PERFORM 8000-DISPLAY-TITLE.
+    PERFORM 6100-ADVANCE-Y.
+    PERFORM 6200-FIX-Y.
+    IF FIRST-TIME = 'Y'
+        MOVE 'N' TO FIRST-TIME
+    ELSE
+        PERFORM 8100-LINE-NO-STATUS
+    END-IF.
+
+    SET NC-FIELD-BUFFER TO ADDRESS OF SCREEN-LINE(NC-FIELD-Y).
+
+    PERFORM TEST AFTER UNTIL NOT NC-FIELD-EXIT-FKEY
+        PERFORM NC-GET-TEXT-RAW
+        IF NC-FIELD-EXIT-FKEY THEN
+            PERFORM NC-FKEY-EVENT
+        END-IF
+    END-PERFORM.
+
+    IF NC-FIELD-CHANGED THEN
+        PERFORM NC-CHANGE-EVENT
+    END-IF.
+    EXIT.
+
+6100-ADVANCE-Y.
+    IF NC-FIELD-FB = 'F'
+        ADD 1 TO NC-FIELD-Y
+    END-IF.
+    IF NC-FIELD-FB = 'B'
+        SUBTRACT 1 FROM NC-FIELD-Y
+    END-IF.
+    EXIT.
+
+6200-FIX-Y.
+    IF SCREEN-HAS-TITLE = 'Y' THEN
+        IF NC-FIELD-Y < 2 THEN
+            MOVE SCREEN-LINES TO NC-FIELD-Y
+            SUBTRACT 1 FROM NC-FIELD-Y
+        END-IF
+    ELSE
+        IF NC-FIELD-Y < 1 THEN
+            MOVE SCREEN-LINES TO NC-FIELD-Y
+            SUBTRACT 1 FROM NC-FIELD-Y
+        END-IF
+    END-IF.
+
+    IF NC-FIELD-Y > SCREEN-LINES - 1 THEN
+        IF SCREEN-HAS-TITLE = 'Y' THEN
+            MOVE 2 TO NC-FIELD-Y
+        ELSE
+            MOVE 1 TO NC-FIELD-Y
+        END-IF
+    END-IF.
+    EXIT.
+
+6300-PUT-LINE.
+    MOVE NC-FIELD-Y TO WK-TEMP1.
+    MOVE NC-FIELD-X TO WK-TEMP2.
+    MOVE WK-LINEX TO NC-FIELD-Y.
+    MOVE 1 TO NC-FIELD-X.
+    PERFORM NC-PUT-TEXT-RAW-NORMAL.
+    MOVE WK-TEMP1 TO NC-FIELD-Y.
+    MOVE WK-TEMP2 TO NC-FIELD-X.
+    EXIT.
+
+6400-PAINT-SCREEN.
+    IF SCN-STRIP-CHARACTER NOT = SPACE THEN
+        INITIALIZE SCREEN-LINE(SCREEN-LINES)
+        STRING "(STATUS LINE: STRIP-CHAR='", SCN-STRIP-CHARACTER, "')" INTO SCREEN-LINE(SCREEN-LINES)
+    ELSE
+        MOVE "(STATUS LINE: NO STRIP CHAR)" TO SCREEN-LINE(SCREEN-LINES)
+    END-IF.
+
+    PERFORM VARYING WK-LINEX FROM 1 BY 1 UNTIL WK-LINEX > SCREEN-LINES
+        MOVE ADDRESS OF SCREEN-LINE(WK-LINEX) TO NC-FIELD-BUFFER
+        PERFORM 6300-PUT-LINE
+    END-PERFORM.
+    EXIT.
+
+7000-FKEY-EVENT.
+    EVALUATE NC-FIELD-FKEY-NO
+        WHEN 1
+            PERFORM 7100-FKEY-1-PRESSED
+        WHEN 2
+            PERFORM 7900-INS-CHAR
+        WHEN 3
+            PERFORM 7900-INS-CHAR
+        WHEN 4
+            PERFORM 7900-INS-CHAR
+        WHEN 5
+            PERFORM 7900-INS-CHAR
+        WHEN 6
+            PERFORM 7900-INS-CHAR
+        WHEN 7
+            PERFORM 7900-INS-CHAR
+        WHEN 8
+            PERFORM 7900-INS-CHAR
+        WHEN 8
+            PERFORM 7900-INS-CHAR
+        WHEN 9
+            PERFORM 7900-INS-CHAR
+        WHEN 10
+            PERFORM 7900-INS-CHAR
+        WHEN 11
+            PERFORM 7900-INS-CHAR
+        WHEN 12
+            PERFORM 7900-INS-CHAR
+        WHEN OTHER
+            CONTINUE
+        END-EVALUATE.
+    EXIT.
+
+7100-FKEY-1-PRESSED.
+    MOVE LENGTH OF WS-MENU-SELECTION TO WS-MENU-SELLEN.
+    CALL "COBCURSES-SHOW-MENU" USING NC-CURSES, GRAPHICS-CHAR-MENU, WS-MENU-SELECTION, WS-MENU-SELLEN.
+    IF RETURN-CODE = 0 THEN
+        EVALUATE WS-MENU-SELECTION
+            WHEN "ULCORNER"
+                MOVE X'01' TO WS-GRAPH-CHAR
+            WHEN "LLCORNER"
+                MOVE X'02' TO WS-GRAPH-CHAR
+            WHEN "URCORNER"
+                MOVE X'03' TO WS-GRAPH-CHAR
+            WHEN "LRCORNER"
+                MOVE X'04' TO WS-GRAPH-CHAR
+            WHEN "LTEE"
+                MOVE X'05' TO WS-GRAPH-CHAR
+            WHEN "RTEE"
+                MOVE X'06' TO WS-GRAPH-CHAR
+            WHEN "BTEE"
+                MOVE X'07' TO WS-GRAPH-CHAR
+            WHEN "TTEE"
+                MOVE X'08' TO WS-GRAPH-CHAR
+            WHEN "HLINE"
+                MOVE X'09' TO WS-GRAPH-CHAR
+            WHEN "VLINE"
+                MOVE X'0A' TO WS-GRAPH-CHAR
+            WHEN "PLUS"
+                MOVE X'0B' TO WS-GRAPH-CHAR
+            WHEN "S1"
+                MOVE X'0C' TO WS-GRAPH-CHAR
+            WHEN "S9"
+                MOVE X'0D' TO WS-GRAPH-CHAR
+            WHEN "DIAMOND"
+                MOVE X'0F' TO WS-GRAPH-CHAR
+            WHEN "CKBOARD"
+                MOVE X'10' TO WS-GRAPH-CHAR
+            WHEN "DEGREE"
+                MOVE X'11' TO WS-GRAPH-CHAR
+            WHEN "PLMINUS"
+                MOVE X'12' TO WS-GRAPH-CHAR
+            WHEN "BULLET"
+                MOVE X'13' TO WS-GRAPH-CHAR
+            WHEN "LARROW"
+                MOVE X'14' TO WS-GRAPH-CHAR
+            WHEN "RARROW"
+                MOVE X'15' TO WS-GRAPH-CHAR
+            WHEN "DARROW"
+                MOVE X'16' TO WS-GRAPH-CHAR
+            WHEN "UARROW"
+                MOVE X'17' TO WS-GRAPH-CHAR
+            WHEN "BOARD"
+                MOVE X'18' TO WS-GRAPH-CHAR
+            WHEN "LANTERN"
+                MOVE X'19' TO WS-GRAPH-CHAR
+            WHEN "BLOCK"
+                MOVE X'1A' TO WS-GRAPH-CHAR
+            WHEN OTHER
+                CONTINUE
+        END-EVALUATE
+        MOVE WS-GRAPH-CHAR TO WS-INS-CHARS(2)
+    END-IF.
+    EXIT.
+
+7900-INS-CHAR.
+    MOVE WS-INS-CHARS(NC-FIELD-FKEY-NO) TO SCREEN-LINE(NC-FIELD-Y)(NC-FIELD-X-POS:1).
+    IF NC-FIELD-X-POS < NC-FIELD-LENGTH THEN
+        ADD 1 TO NC-FIELD-X-POS
+    END-IF.
+    EXIT.
+
+8000-DISPLAY-TITLE.
+    IF SCREEN-HAS-TITLE = 'Y'
+        ACCEPT NC-SCREEN-DATE FROM DATE
+        ACCEPT NC-SCREEN-TIME FROM TIME
+        SET TITLE-TEXT TO ADDRESS OF SCREEN-LINE(1)
+        CALL "NC_TITLE" USING
+            TITLE-LINE-NO,
+            TITLE-TEXT,
+            NC-FIELD-WINLEN,
+            TITLE-COLOUR-PAIR,
+            TITLE-BOLD,
+            TITLE-UNDERLINE,
+            TITLE-REVERSE,
+            NC-SCREEN-DATE,
+            NC-SCREEN-TIME
+    END-IF.
+    EXIT.
+
+8100-LINE-NO-STATUS.
+    MOVE NC-FIELD-Y TO MS-LINE-NUMBER.
+    MOVE NC-FIELD-X-POS TO MS-COLUMN-NUMBER.
+    MOVE ADDRESS OF MSG-STATUS TO NC-MSG-TEXT.
+    MOVE LENGTH OF MSG-STATUS TO NC-MSG-LENGTH.
+    PERFORM NC-INFO-MESSAGE.
+    EXIT.
+
+9000-FINALIZE.
+    MOVE NC-FIELD-Y TO SCREEN-LAST-LINE.
+    MOVE NC-FIELD-X-POS TO SCREEN-LAST-COLUMN.
+    PERFORM NC-CLEAR.
+    MOVE SAVE-EDIT-ATTR TO NC-EDIT-ATTR.
+    MOVE SAVE-LINES TO SCREEN-LINES.
+    EXIT.
+
+NC-CHANGE-EVENT.
+    MOVE 'Y' TO SCN-IMAGE-CHANGED.
+    EXIT.
+
+NC-VERIFY-EVENT.
+    EXIT.
+
+NC-FIELD-EVENT.
+    EXIT.
+
+NC-MOUSE-EVENT.
+    EXIT.
+
+NC-STATE-CHANGE-EVENT.
+    EXIT.
+
+NC-FKEY-EVENT.
+    PERFORM 7000-FKEY-EVENT.
+    EXIT.
+
+    COPY COBCURSQ.
+
+END PROGRAM SD002030.
+
+*> $Source: /cvsroot/cobcurses/cobcurses/src/sdesign/sd002030.cob,v $

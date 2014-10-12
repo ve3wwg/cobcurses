@@ -1,0 +1,172 @@
+        IDENTIFICATION DIVISION.
+        PROGRAM-ID. TEST005.
+      *> 
+      *> THIS PROGRAM IS DESIGNED TO READ IN FILE test005.csv AS
+      *> A NORMAL EXCELL *>.CSV COMMA DELIMITED FILE. EACH COLUMN
+      *> IN THIS TEST IS REGISTERED BY ITS COLUMN HEADING NAME.
+      *> THE COLUMN NAMES ARE FROM THE FIRST RECORD IN THE FILE.
+      *> 
+      *> THE FIRST RECORD IS USED TO REGISTER THE COLUMN HEADINGS.
+      *> THEN A HEADING RECORD IS WRITTEN OUT USING 
+      *> NC-EMIT-CSV-HEADINGS. THIS FORMAT SHOULD BE IDENTICAL
+      *> TO THE ORIGINAL LINE 1 (IGNORING BLANK TRIMMING).
+      *>
+      *> THEN SUCCESSIVE *>.CSV RECORDS ARE READ, AND EACH ONE
+      *> IS REASSEMBLED INTO A 
+      *>
+      *> THE FILE IS READ, COLUMNS EXTRACTED AND PRINTED TO
+      *> STANDARD OUTPUT. THE CAPTURE OUTPUT IS THEN COMPARED
+      *> WITH THE EXPECTED RESULTS.
+      *> 
+        ENVIRONMENT DIVISION.
+        INPUT-OUTPUT SECTION.
+        FILE-CONTROL.
+
+            SELECT INP-FILE
+                ASSIGN TO "test005.inp"
+                ORGANIZATION IS LINE SEQUENTIAL.
+
+            SELECT CSV-FILE
+                ASSIGN TO "test005.csv"
+                ORGANIZATION IS LINE SEQUENTIAL.
+
+        DATA DIVISION.
+        FILE SECTION.
+
+            FD  INP-FILE.
+            01  INP-RECORD.
+                10  INP-STATION-NAME            PIC X(25).
+                10  INP-UNION-STATION-DEPARTURE PIC X(7).
+                10  INP-STATION-ARRIVAL         PIC X(7).
+
+            FD  CSV-FILE.
+            01  CSV-RECORD                      PIC X(80).
+
+        WORKING-STORAGE SECTION.
+
+            COPY COBCRETC.
+
+            01  WS-FLAGS.
+                10  WS-INP-EOF-FLAG             PIC X.
+                    88  WS-INP-EOF              VALUE 'Y'
+                        FALSE IS                'N'.
+
+            COPY COBCEXTRA.
+
+        PROCEDURE DIVISION.
+      *> 
+      *> MAIN PROGRAM
+      *> 
+        MAIN-PROG.
+            PERFORM 1000-INITIALIZE.
+            PERFORM 5000-PROCESS.
+            PERFORM 9000-FINALIZE.
+            STOP RUN.
+
+      *> 
+      *> INITIALIZATION
+      *> 
+        1000-INITIALIZE.
+            OPEN INPUT INP-FILE.
+            OPEN OUTPUT CSV-FILE.
+      *> 
+      *> CLEAR ALL PRIOR ASSOCIATIONS, IF ANY.
+      *> 
+            PERFORM NC-CLEAR-CSV-HEADINGS.
+      *> 
+      *> SET ALL CSV OPTIONS (THESE ARE DEFAULTS)
+      *> 
+            MOVE ',' TO NC-CSV-DELIMITER.
+            SET NC-SINGLE-DELIMTER TO TRUE.
+            SET NC-CSV-QUOTE TO TRUE.
+      *>
+      *> REGISTER COLUMN 1'S HEADING AND BUFFER
+      *>
+            MOVE "STATION NAME" TO NC-CSV-HEADING.
+            SET NC-CSV-COL-BUFFER TO ADDRESS OF INP-STATION-NAME.
+            MOVE LENGTH OF INP-STATION-NAME TO NC-CSV-COL-BUFLEN.
+            PERFORM NC-REGISTER-CSV-COLUMN-HEADING.
+            PERFORM 9900-RETURN-CODE
+      *>
+      *> REGISTER COLUMN 2'S HEADING AND BUFFER
+      *>
+            MOVE "UNION STATION DEPARTURE" TO NC-CSV-HEADING.
+            SET NC-CSV-COL-BUFFER TO
+                ADDRESS OF INP-UNION-STATION-DEPARTURE.
+            MOVE LENGTH OF INP-UNION-STATION-DEPARTURE
+                TO NC-CSV-COL-BUFLEN.
+            PERFORM NC-REGISTER-CSV-COLUMN-HEADING.
+            PERFORM 9900-RETURN-CODE
+      *>
+      *> REGISTER COLUMN 3'S HEADING AND BUFFER
+      *>
+            MOVE "STATION ARRIVAL" TO NC-CSV-HEADING.
+            SET NC-CSV-COL-BUFFER TO
+                ADDRESS OF INP-STATION-ARRIVAL.
+            MOVE LENGTH OF INP-STATION-ARRIVAL
+                TO NC-CSV-COL-BUFLEN.
+            PERFORM NC-REGISTER-CSV-COLUMN-HEADING.
+            PERFORM 9900-RETURN-CODE
+      *> 
+      *> TELL COBCURSES WHERE THE OUTPUT IS GOING TO
+      *> 
+            SET NC-CSV-TEXT TO ADDRESS OF CSV-RECORD.
+            MOVE LENGTH OF CSV-RECORD TO NC-CSV-LENGTH.
+            EXIT.
+
+      *> 
+      *> MAIN PROCESSING LOOP
+      *> 
+        5000-PROCESS.
+
+            PERFORM NC-EMIT-CSV-HEADINGS.
+            PERFORM 9900-RETURN-CODE
+            WRITE CSV-RECORD.
+
+            PERFORM 5100-READ-INP
+            PERFORM UNTIL WS-INP-EOF
+                PERFORM NC-EMIT-CSV-RECORD
+                PERFORM 9900-RETURN-CODE
+                WRITE CSV-RECORD
+
+                PERFORM 5100-READ-INP
+            END-PERFORM.
+            EXIT.
+
+      *> 
+      *> READ ONE *.CSV RECORD
+      *> 
+        5100-READ-INP.
+            READ INP-FILE
+                AT END
+                    SET WS-INP-EOF TO TRUE
+                NOT AT END
+                    SET WS-INP-EOF TO FALSE
+            END-READ.
+            EXIT.
+
+      *> 
+      *> PROGRAM CLEANUP
+      *> 
+        9000-FINALIZE.
+            CLOSE CSV-FILE, INP-FILE.
+      *>
+      *> CLEARING THE HEADINGS IS NOT STRICTLY REQUIRED,
+      *> BUT IS DONE HERE AS PART OF THE TEST (DOES IT ABORT?)
+      *>
+            PERFORM NC-CLEAR-CSV-HEADINGS.
+            EXIT.
+
+        9900-RETURN-CODE.
+      *>
+      *>     REPORT RETURN CODE :
+      *>
+            DISPLAY "RETURN-CODE=", RETURN-CODE.
+            EXIT.
+
+      *> 
+      *> SUPPORT ROUTINES
+      *> 
+            COPY COBCURSX.
+
+        END PROGRAM TEST005.

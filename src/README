@@ -1,0 +1,365 @@
+			CobCurses for OpenCOBOL
+              http://sourceforge.net/projects/cobcurses
+
+CobCurses is an open-source binding and screen designer utility 
+for the COBOL compiler. This package is a specific implementation
+for Open COBOL and requires access to a curses(3X) facility.
+
+For the Open-Cobol compiler, visit:
+
+                        http://www.opencobol.org/
+		http://sourceforge.net/projects/open-cobol
+
+CobCurses provides text screen oriented I/O for the COBOL program
+replacing the need for the SCREEN SECTION in COBOL. The COBOL
+programmer can choose to use a subset of the curses(3X) low level
+APIs, or use the high level field oriented Screen Designer
+routines. The Screen Designer utility, allows the programmer to
+generate code necessary to support the screen, saving time and
+possibility for errors.
+
+-----------------------------------------------------------------
+
+Detailed and up-to-the-minute documentation can be found using
+the SF Wiki resourdes here:
+
+    http://cobcurses.wiki.sourceforge.net
+
+All documentation regarding installation, User Guide, Programmer
+Guide and Troubleshooting is found there.
+
+------------------------------------------------------------------
+
+This package contains the following subdirectories:
+
+    copybk      The various COBOL COPY books
+    lib         The libcobcurses support library
+    utils	Various CobCurses utility programs
+    sdesign     The Screen Designer utility
+    test	Test programs (for after install)
+
+Subdirectory:
+
+    data	Temporary indexed data files
+
+The data subdirectory is created during the build process and
+is not used after the software is installed.
+
+===================================================================
+THIS SECTION ONLY APPLIES TO THOSE CUSTOMIZING COBCURSES -- IT
+DOES NOT APPLY TO APPLICATION USERS OF COBCURSES:
+
+If you are customizing CobCurses for your own needs, be aware
+that the indexed files that you will be using are found in the
+directory $COBCURSES_TOPDIR (on most platforms, this will be
+$HOME/.cobcurses). To have those changes reflected in the
+CobCurses builds, you will need to do:
+
+    In the src subdir:
+
+    1. sdbackup (creates backup.txt)
+    2. cp backup.txt bak/backup.bak
+    3. make clean all
+
+The above procedure will rebuild src/data with the new contents
+of bak/backup.bak, and build CobCurses accordingly.
+
+END COBCURSES CUSTOMIZATION NOTE.
+===================================================================
+
+All programs are distributed under the Lesser GNU General
+Public License (LGPL).  See COPYING for details. 
+
+Be aware however, that other software used indirectly,
+including the Berkeley DB (indexed sequential support) may have
+other licensing terms that you may need to meet.
+
+Requirements
+============
+
+*** IMPORTANT ***
+
+Release 0.95 of CobCurses *MUST* have Open-Cobol 1.0 or later
+installed. Prior releases may compile ok, but will fail in 
+various odd ways.
+
+CobCurses requires the following external libraries and packages
+to be installed:
+
+    * Latest release of Open COBOL 1.0 (or later)
+
+    * An ansii C compiler (gcc or similar, supported by
+      Open-COBOL).
+
+    * A curses library (must be the same as used by the
+      Open COBOL compiler: ncurses/curses/pdcurses
+      (be sure to find out what your compiler was 
+      compiled with)
+
+NOTE:
+    No curses menu library is required for CobCurses
+    menu support (this is a feature).
+
+Installation
+============
+
+The configuration and tools used to build this project
+will usually fail if there are embedded blanks within
+the pathnames or directories specified. Use install
+pathnames without blanks in their names.
+
+Special Optional Configuration Options:
+
+    --enable-atexit
+        This option allows cobcurses.o (in libcobcurses)
+        to call the curses endwin(3X) routine to restore
+        terminal settings, even in the case of a program
+        abort. Normally libcobcurses.cob takes care of
+        this, but will not in the event of an abort
+        (this is the default compile setting). During
+        development, you may prefer to have this enabled.
+
+	If this feature is compiled into the project, it
+	can be conditionally disabled by setting environment
+	variable COBCURSES_NORECOVERY=Y, and exporting it.
+
+    --enable-mouse
+        This option enables curses mouse support. By
+        default this is disabled as this mode of operation
+        is not terribly useful. When enabled you will lose
+        cut/paste facilities of xterm (etc.) and only gain
+        a feeble mouse pointing feature if ncurses is used.
+        This feature might be removed in a future release.
+
+    --enable-ncurses
+        This option forces the build to use the ncurses
+        library. To be successful, this should agree
+        with what the installed Open COBOL compiler used.
+
+    --enable-pdcurses
+        This option forces the build to use the pdcurses
+        library. To be successful, this should agree
+        with what the installed Open COBOL compiler used.
+    
+    --enable-curses
+        This option forces the build to use the old curses
+        library. To be successful, this should agree
+        with what the installed Open COBOL compiler used.
+
+To generate/install CobCurses :
+
+    ./configure [--options]
+    make
+
+To configure to install in /usr/local (the default), you
+could use:
+
+    ./configure --prefix=/usr/local
+
+For MinGW builds, you might want to use:
+
+    ./configure --prefix=/mingw
+
+To rebuild the project, do:
+
+    make clean
+
+and then type 'make' again.
+
+Installation:
+=============
+
+After successfully building the project (above), you are
+then ready to install. The destination of the install will
+be dictated by the --prefix= option as used on the 
+configure step (/usr/local by default).
+
+    1. make install 
+       (usually as root depending upon prefix)
+
+    2. Change your /etc/profile or $HOME/.profile (or equiv)
+       to establish the following environment variable(s):
+
+       COBC_LIBRARY_PATH="<libdir>:$COBC_LIBRARY_PATH"
+       export COBC_LIBRARY_PATH
+
+       where <libdir> is the directory where shared library
+       libcobcurses.sl (or .dll/.so etc.) is installed
+
+       By default <libdir> is /usr/local/lib .
+
+    3. By default, every user has their own collection of
+       screen designer data files under:
+
+       $HOME/cobcurses/data
+
+       To change that, you will need to alter the following
+       default environment variables and export them. These
+       are their default values:
+
+           COBCURSES_TOPDIR="${HOME}/cobcurses"
+           COBCURSES_DATADIR="${COBCURSES_TOPDIR}/data"
+
+    4. New users of CobCurses will need to initialize their
+       own database by doing:
+
+       $ init-cobcurses
+
+Running the Tests:
+==================
+
+The test programs can only be built and run after
+CobCurses has been installed.
+
+These tests also assume that you have performed the
+init-cobcurses command, under the userid that you
+will be using.
+
+     1.	cd ./test	(from ./src)
+     2. make
+     3. invoke executable test program(s) :
+
+	i)	./templ
+
+		This is a very simple template program
+		demonstrating how a main program and a
+		subscreen can be built and used. See
+		sources template_screen.cob and the
+		module template_main.cob for the main
+		program. These use generated code from
+		the screen designer.
+
+	ii)	./3270test
+
+		This is a very simple 3270 mode screen,
+		using generated code. 
+
+        iii)    ./testcurses
+
+                This simple program just reports some
+                interesting bits about the capabilities
+                of your curses(3X) library support.
+
+	4. Perform other CobCurses API checks:
+
+		$ make check
+
+Troubleshooting:
+================
+
+	If for some reason the test program immediately
+	exits back to the shell prompt, without an error 
+	message, do the following:
+
+	$ COBCURSES_NORECOVERY=Y
+	$ export COBCURSES_NORECOVERY
+	$ ./program
+
+	This will disable any automatic cleanup, and will 
+	allow you to read the error messages.
+
+	Note that this may also cause your terminal settings
+	to be messed up, since curses will not have restored
+	the original settings in this scenario. Doing the
+	usual 'stty sane' is usually sufficient (sometimes
+	it may be necessary to use ^J (LF) in place of carraige
+	return after the command input).
+
+Tracing:
+========
+
+With CobCurses 0.95 and later, two new environment enabled
+features are now available:
+
+    $ COBCURSES_TRACE=file_name
+    $ export COBCURSES_TRACE
+
+and optionally:
+
+    $ COBCURSES_TRACE_LEVEL=n
+    $ export COBCURSES_TRACE_LEVEL
+
+The first (COBCURSES_TRACE) indicates that CobCurses screen
+programs should log trace messages to the file name indicated
+(the file is overwritten with each program startup). By
+default, trace messages of level 5 and higher are recorded:
+
+    $ COBCURSES_TRACE_LEVEL=5
+
+This is usually enough if you have a problematic screen and you
+need to trace the FSM (Field State Machine). The highest level
+of detail is obtained by setting the trace level to zero:
+
+    $ COBCURSES_TRACE_LEVEL=0
+
+There other internal information is recorded to help in tracing
+of your problem.
+
+Uninstalling:
+=============
+
+To uninstall the current version, after an install
+has been made, can be done as follows:
+
+  $ make uninstall
+
+This may leave a few empty subdirectories that are
+cobcurses specific.
+
+Post-Install Configuration:
+===========================
+
+  $ cobcurses-config   
+  Usage: cob-config [OPTIONS]
+  Options:
+          [--prefix[=DIR]]
+          [--exec-prefix[=DIR]]
+          [--version]
+          [--libs]
+          [--cflags]
+
+  --prefix will return the ./configure value used
+  	   for the --prefix=DIR option.
+
+  --exec-prefix will normally be identical to the
+           --prefix value.
+
+  --version will return the CobCurses package version
+            that is currently installed.
+
+  --libs    will return C compiler options used for
+            libraries that may be necessary (curses
+            libraries, for example).
+
+  --cflags  will return the C compiler options necessary
+            for including the C header files and
+            CobCurses copy books. The results of this
+            output should be usable by the cobc 
+            Open-Cobol compiler for copy books.
+
+	    Example:
+
+            $ cobcurses-config --cflags
+            -I/usr/local/include/cobcurses
+
+Notes:
+======
+
+1.  On Linux systems, you may need to run ldconfig
+    after installing the package (as root). This
+    can be repeated as necessary.
+
+2.  Make sure that the library libcobcurses.sl/.dll
+    gets installed in a directory that is searched
+    (or modify your environment to suit). Some
+    distributions do not search /usr/local/lib,
+    possibly requiring edits of /etc/ld.so.conf
+    and (re) running ldconfig as root.
+
+Advanced Configuration Options:
+===============================
+
+  --with-cc=<cc>            Specify C compiler command used by cobcurses
+                            Use only if necessary.
+
+End of README.

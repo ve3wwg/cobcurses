@@ -1,0 +1,12 @@
+#!/bin/sh
+# Warren Gay
+# Use For building the CobCurses project only
+
+PATH="../utils:$PATH"
+COB_LIBRARY_PATH="$PWD/../lib"
+
+export COB_LIBRARY_PATH
+
+exec sdgenerate $*
+
+# End

@@ -1,0 +1,32 @@
+#!/bin/sh
+# Warren W. Gay
+# Reconfigure configure.ac
+#
+# This is necessary to eliminate a pesky problem with HPUX.
+# If the environment variable LPATH is defined, some of the
+# initial ./configure tests will fail, because of mixed
+# 32-bit code with 64-bit librarys. Gak!  Unfortunately,
+# there does not appear to be a documented way to unset LPATH
+# ahead of these initial tests in configure.ac. Double gak.
+# 
+# So here, we run autoreconf, and then modify the resulting
+# ./configure file slightly to include the unset command.
+
+set -eu
+echo "Reconfiguring: configure.ac => configure"
+
+autoreconf
+
+sed <configure >configure.new \
+'/= xHP-UX ; then unset LPATH/d;/^# Be more Bourne compatible/s|#|if test x`uname -s` = xHP-UX ; then unset LPATH; fi\
+#|'
+
+mv configure.new configure
+chmod u+rwx configure
+
+echo "autoheader"
+autoheader
+echo "automake"
+automake
+
+# End reconf

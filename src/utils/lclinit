@@ -1,0 +1,11 @@
+#!/bin/sh
+
+PATH="$PWD:$PATH"
+COB_LIBRARY_PATH="$PWD/../lib"
+
+export PATH
+export COB_LIBRARY_PATH
+
+exec ./init-cobc $*
+
+# End

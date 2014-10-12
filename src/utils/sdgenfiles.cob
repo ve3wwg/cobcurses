@@ -1,0 +1,71 @@
+        IDENTIFICATION DIVISION.
+        PROGRAM-ID. SD-GEN-FILES.
+
+        ENVIRONMENT DIVISION.
+        INPUT-OUTPUT SECTION.
+        FILE-CONTROL.
+        
+            SELECT SCREEN-FILE ASSIGN TO "SCREENS.X"
+                ORGANIZATION IS INDEXED
+                ACCESS IS RANDOM
+                RECORD KEY IS SCN-NAME.
+
+            SELECT SCRNBG-FILE ASSIGN TO "SCRNBG.X"
+                ORGANIZATION IS INDEXED
+                ACCESS IS RANDOM
+                RECORD KEY IS SCRBG-KEY.
+
+            SELECT SCRFDEF-FILE ASSIGN TO "SCRFDEF.X"
+                ORGANIZATION IS INDEXED
+                ACCESS IS RANDOM
+                RECORD KEY IS SCR-FDEF-KEY.
+
+            SELECT SCRFSTA-FILE ASSIGN TO "SCRFSTA.X"
+                ORGANIZATION IS INDEXED
+                ACCESS IS RANDOM
+                RECORD KEY IS SCR-FST-KEY.
+
+            SELECT CHARSET-FILE ASSIGN TO "SCRCHRSET.X"
+                ORGANIZATION IS INDEXED
+                ACCESS IS RANDOM
+                RECORD KEY IS CHARSET-NAME.
+
+        DATA DIVISION.
+        FILE SECTION.
+
+        FD  SCREEN-FILE.
+        01  SCREEN-RECORD.
+            COPY SCREEN-01.
+
+        FD  SCRNBG-FILE.
+        01  SCRNBG-RECORD.
+            COPY SCREEN-BG.
+
+        FD  SCRFDEF-FILE.
+        01  SCRFDEF-RECORD.
+            COPY SCREEN-FD.
+
+        FD  SCRFSTA-FILE.
+        01  SCRFSTA-RECORD.
+            COPY SCREEN-FS.
+
+        FD  CHARSET-FILE.
+        01  CHARSET-RECORD.
+            COPY SCREEN-CS.
+
+        PROCEDURE DIVISION.
+
+        MAIN-PROGRAM.
+            OPEN OUTPUT SCREEN-FILE
+            OPEN OUTPUT SCRNBG-FILE
+            OPEN OUTPUT SCRFDEF-FILE
+            OPEN OUTPUT SCRFSTA-FILE
+            OPEN OUTPUT CHARSET-FILE
+            CLOSE SCREEN-FILE
+            CLOSE SCRNBG-FILE
+            CLOSE SCRFDEF-FILE
+            CLOSE SCRFSTA-FILE
+            CLOSE CHARSET-FILE
+            STOP RUN.
+
+        END PROGRAM SD-GEN-FILES.

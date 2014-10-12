@@ -1,0 +1,9 @@
+One,Two,Three,Four,Five.
+R-001,R1-2,"R1.3",R1.4
+"RECORD 002","R2, 2","R2 THREE"  ,"R2 FOUR"
+"RECORD""003","R3 TWO","R3 THREE","R3 FOUR"
+004,TWO,THREE,"FOUR-LAST"
+  "More data" here, and here, and there., etc. etc.
+"  X  ",,Three,four.
+ 01 ,"(""2"")",3,4,5,6.
+Z001,Z002,Z003,Z004,Z005,Z006,

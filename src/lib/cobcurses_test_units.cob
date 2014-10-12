@@ -1,0 +1,41 @@
+        IDENTIFICATION DIVISION.
+        PROGRAM-ID. COBCURSES-TEST-UNITS.
+
+        DATA DIVISION.
+        WORKING-STORAGE SECTION.
+
+        01  WS-OUT-COUNT-OPTIONS                PIC 9999 COMP-5.
+        01  WS-OUT-COUNT-UNITS                  PIC 9999 COMP-5.
+        01  WS-OUT-ERROR-OFFSET                 PIC 9999 COMP-5.
+        01  WS-IN-ERROR-MSG-BUFLEN              PIC 9999 COMP-5.
+
+        LINKAGE SECTION.
+
+        01  IN-UNITS-SPECIFICATION-STRING       PIC X(80).
+        01  OUT-COUNT-OPTIONS                   PIC 99.
+        01  OUT-COUNT-UNITS                     PIC 99.
+        01  OUT-ERROR-OFFSET                    PIC 99.
+        01  OUT-ERROR-MSG-BUF                   PIC X(80).
+        01  IN-ERROR-MSG-BUFLEN                 PIC 99.
+
+        PROCEDURE DIVISION USING
+            IN-UNITS-SPECIFICATION-STRING,
+            OUT-COUNT-OPTIONS, OUT-COUNT-UNITS,
+            OUT-ERROR-OFFSET, OUT-ERROR-MSG-BUF,
+            IN-ERROR-MSG-BUFLEN.
+
+            MOVE IN-ERROR-MSG-BUFLEN TO WS-IN-ERROR-MSG-BUFLEN.
+            CALL "COBCURSES_TEST_UNITS_STRING" USING
+                IN-UNITS-SPECIFICATION-STRING,
+                WS-OUT-COUNT-OPTIONS,
+                WS-OUT-COUNT-UNITS,
+                WS-OUT-ERROR-OFFSET,
+                OUT-ERROR-MSG-BUF,
+                WS-IN-ERROR-MSG-BUFLEN.
+
+            MOVE WS-OUT-COUNT-OPTIONS TO OUT-COUNT-OPTIONS.
+            MOVE WS-OUT-COUNT-UNITS TO OUT-COUNT-UNITS.
+            MOVE WS-OUT-ERROR-OFFSET TO OUT-ERROR-OFFSET.
+            GOBACK.
+
+        END PROGRAM COBCURSES-TEST-UNITS.
