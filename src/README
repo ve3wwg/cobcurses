@@ -1,5 +1,5 @@
 			CobCurses for OpenCOBOL
-              http://sourceforge.net/projects/cobcurses
+  	          https://github.com/ve3wwg/cobcurses
 
 CobCurses is an open-source binding and screen designer utility 
 for the COBOL compiler. This package is a specific implementation
@@ -21,9 +21,9 @@ possibility for errors.
 -----------------------------------------------------------------
 
 Detailed and up-to-the-minute documentation can be found using
-the SF Wiki resourdes here:
+the github Wiki resourdes here:
 
-    http://cobcurses.wiki.sourceforge.net
+    https://github.com/ve3wwg/cobcurses/wiki
 
 All documentation regarding installation, User Guide, Programmer
 Guide and Troubleshooting is found there.
