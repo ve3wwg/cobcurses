@@ -6880,7 +6880,7 @@ esac
 
 if test "`basename $CC`" = "gcc"
 then
-        CFLAGS="$CFLAGS -funsigned-char -Wall -Wwrite-strings -Wmissing-prototypes"
+        CFLAGS="$CFLAGS -funsigned-char -Wall -Wwrite-strings -Wmissing-prototypes -Wnounused-but-set-variable"
 fi
 
 #
