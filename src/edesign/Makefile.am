@@ -5,7 +5,7 @@
 #############################################################
 
 COBWARN=-Wall -Wno-call-params
-COBSTD=-std=cobol2002
+COBSTD=-std=cobol85
 COBOPTS=$(COBWARN) $(COBDBG) $(COBSTD) -I../copybk -free
 COBOL=cobc
 
