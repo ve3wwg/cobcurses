@@ -16,3 +16,8 @@ Cobcurses Documentation:
     https://github.com/ve3wwg/cobcurses/wiki
 
 
+CHANGE LOG:
+
+    Fri Jun 30 00:13:50 2017
+        - Now uses correct -std=cobol85 for successful cobol compiles.
+        - Suppressed two types of C compile warnings
