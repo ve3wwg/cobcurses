@@ -198,7 +198,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 COBWARN = -Wall -Wno-call-params
-COBSTD = -std=cobol2002
+COBSTD = -std=cobol85
 COBOPTS = $(COBWARN) $(COBDBG) $(COBSTD) -I../copybk -free
 COBOL = cobc
 TESTS = test001.sh test002.sh test003.sh test004.sh test005.sh test006.sh \
