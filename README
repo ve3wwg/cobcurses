@@ -21,3 +21,8 @@ CHANGE LOG:
     Fri Jun 30 00:13:50 2017
         - Now uses correct -std=cobol85 for successful cobol compiles.
         - Suppressed two types of C compile warnings
+
+    Sun Nov  5 16:35:45 2017
+        - Fixed src/lib/cobcurses.c so that the variable name 
+          restrict, is now renamed restrict_ to avoid compile
+          errors.
