@@ -631,16 +631,16 @@ NC_GETCH(
 static int
 internal_getch(
     cct_ushort 		uppers,
-    char 		*restrict,
+    char 		*restrict_,
     cct_unsigned 	*c2,
     cct_ushort 		csr
 ) {
 	int rc;
 	cct_ushort rlen = 0;
 
-	if ( restrict ) {
+	if ( restrict_ ) {
 		/* Minimum length is 1 (put blank in first) */
-		for ( rlen=1; restrict[rlen] != ' '; ++rlen );
+		for ( rlen=1; restrict_[rlen] != ' '; ++rlen );
 	}
 
 	*c2 = rc = term->api->getkey(term);
@@ -649,13 +649,13 @@ internal_getch(
 		/* Ascii character */
 		if ( uppers )
 			rc = toupper(rc);
-		if ( !csr && restrict && ( rc == '.' || rc == '/' ) )
+		if ( !csr && restrict_ && ( rc == '.' || rc == '/' ) )
 			; /* Allow this special case -- it will be caught later */
-		else if ( rc >= ' ' && restrict && rlen > 0 ) {
+		else if ( rc >= ' ' && restrict_ && rlen > 0 ) {
 			int x;
 
 			for ( x = 0; x < rlen; ++x )
-				if ( rc == restrict[x] )
+				if ( rc == restrict_[x] )
 					return rc;
                         return 0;       /* This char not allowed */
 		}
@@ -941,7 +941,7 @@ menu_selection(
  *	window_length		The terminal field length (when 0 assumes field_length)
  *	field_text		Pointer to the receiving buffer
  *	uppercase		When 'Y', force input to uppercase
- *	restrict		List of characters to restrict input to (blank delimited)
+ *	restrict_		List of characters to restrict_ input to (blank delimited)
  *	
  * RETURNED :
  *	xpos			The 1-based relative cursor position upon exit
@@ -958,7 +958,7 @@ menu_selection(
  *		null value).
  *		The field's content is restored to the original content when
  *		this exit is taken.
- *	3.	If blank is to be included in the restricted character set,
+ *	3.	If blank is to be included in the restrict_ed character set,
  *		then include the blank in the first position.
  */
 int
@@ -974,7 +974,7 @@ NC_GETTEXT(
     char		*puppercase,	/* Uppercase field if 'Y' */
     char		*pwmask,	/* Mask as a password field when 'Y' */
     char		*pnotblank,	/* When 'Y' do not allow FWD movement with blank field */
-    char		**prestrict,	/* Restrict to these characters */
+    char		**prestrict_,	/* Restrict to these characters */
     char		*psignyn,	/* When 'Y', allow a sign character in numeric field */
     cct_ushort		*pnumdigits,	/* Max Number of digits for numeric field */
     cct_ushort		*pnumdecplaces,	/* Max number of decimal places in numeric field */
@@ -996,7 +996,7 @@ NC_GETTEXT(
 	cct_ushort x;			/* Terminal column number */
 	cct_pair pair;
 	void *pcomp_x = *ppcomp_x; 	/* Ptr to a pointer to COMP-X */
-        char *restrict;
+        char *restrict_;
         char *field_text;
 	cct_ushort comp_type = *pcomp_type; /* Comp type if any */
 	char *units_config = 0;		/* Units config if any */
@@ -1047,7 +1047,7 @@ NC_GETTEXT(
 	fldlen    = *pfield_length;
 	winlen    = *pwindow_length;
 	field_text = *pfield_text;
-	restrict  = *prestrict;
+	restrict_  = *prestrict_;
 	maxdigits = *pnumdigits;
 	maxdecs   = *pnumdecplaces;
 	xpos      = *pxpos;
@@ -1079,8 +1079,8 @@ NC_GETTEXT(
 	case CBL_COMP_1 :
 	case CBL_COMP_2 :
 		isnum = 0;	/* It is numeric, but allow units input */
-		units_config = (char *) restrict;
-		restrict = (char *) " 0123456789+-.,abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+		units_config = (char *) restrict_;
+		restrict_ = (char *) " 0123456789+-.,abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 		cobcurses_trace_printf(2,"For a COMP-%u data type.\n",comp_type == CBL_COMP_1 ? 1 : 2);
 		break;
 	default :
@@ -1109,7 +1109,7 @@ NC_GETTEXT(
 	}
 
 	full_undo = ALLOCA(fldlen);
-	isYN = restrict && !strncmp((char *)restrict,"YN ",3) ? 1 : 0;
+	isYN = restrict_ && !strncmp((char *)restrict_,"YN ",3) ? 1 : 0;
 
 	*pfield_exit = ' ';		/* Clear field exit code */
 	*pfb = ' ';
@@ -1129,12 +1129,12 @@ NC_GETTEXT(
 	}
 
 	/*
-	 * If numeric, then use a default restricted charset, and
+	 * If numeric, then use a default restrict_ed charset, and
 	 * edit the buffer for editing convenience :
 	 */
 	if ( isnum ) {
-		if ( !restrict )
-			restrict = (char *) (signch ? " 0123456789+-., " : " 0123456789., ");
+		if ( !restrict_ )
+			restrict_ = (char *) (signch ? " 0123456789+-., " : " 0123456789., ");
 		if ( !fclear )
 			edit_numfield(field_text,fldlen,0);
 	}
@@ -1161,7 +1161,7 @@ loop:	while ( 1 ) {
 		/*
 		 * Get next input key event :
 		 */
-		ch = internal_getch(uppers,restrict,&c2,csr);
+		ch = internal_getch(uppers,restrict_,&c2,csr);
 
 		/*
 		 * Dispatch on entered key :
@@ -1593,7 +1593,7 @@ xit:	if ( mode == Mode_3270 || (mode == Action_Mode && *pfield_exit == NC_FIELD_
 		if ( notblk && *pfb == 'F' && cobcurses_is_blank(field_text,fldlen) )
 			goto loop;	/* Don't exit until something entered! */
 
-		if ( restrict != 0 && (csr = cobcurses_is_charset(field_text,fldlen,restrict)) > 0 ) {
+		if ( restrict_ != 0 && (csr = cobcurses_is_charset(field_text,fldlen,restrict_)) > 0 ) {
 			--csr;		/* Cursor is zero based */
 			goto loop;	/* Invalid characters! (due to paste) */
 		}
@@ -1766,12 +1766,12 @@ NC_VERIFY(
     cct_ushort	*pfield_length,	/* Field's length */
     char 	**pfield_text,	/* Pointer to Field's buffer address */
     char 	*pnotblank,	/* When 'Y' do not allow FWD movement with blank field */
-    char	**prestrict,	/* Restrict to these characters */
+    char	**prestrict_,	/* Restrict to these characters */
     char	*psignyn,	/* When 'Y', allow a sign character in numeric field */
     cct_ushort	*pnumdigits,	/* Max Number of digits for numeric field */
     cct_ushort	*pnumdecplaces	/* Max number of decimal places in numeric field */
 ) {
-        char *restrict;				/* Restricted character set to use */
+        char *restrict_;				/* Restricted character set to use */
         char *field_text;			/* Pointer to the field buffer */
 	cct_ushort fldlen;			/* Buffer length */
 	cct_bool notblk = TOBOOL(*pnotblank); 	/* Don't allow blank field going forward */
@@ -1783,12 +1783,12 @@ NC_VERIFY(
 
 	fldlen 		= *pfield_length;
 	field_text 	= *pfield_text;
-	restrict	= *prestrict;
+	restrict_	= *prestrict_;
 	maxdigits	= *pnumdigits;
 	maxdecs		= *pnumdecplaces;
 
 	isnum = maxdigits > 0 || maxdecs > 0 ? 1 : 0;
-	isYN = restrict && !strncmp((char *)restrict,"YN ",3) ? 1 : 0;
+	isYN = restrict_ && !strncmp((char *)restrict_,"YN ",3) ? 1 : 0;
 
 	cobcurses_trace_printf(2,"\nNC_VERIFY('%.*s') called.\n",fldlen,field_text);
 
@@ -1802,9 +1802,9 @@ NC_VERIFY(
 		goto failed;		/* Field cannot be blank */
 	}
 
-	if ( restrict != 0 && cobcurses_is_charset(field_text,fldlen,restrict) > 0 ) {
+	if ( restrict_ != 0 && cobcurses_is_charset(field_text,fldlen,restrict_) > 0 ) {
 		cobcurses_trace_printf(2,"invalid character in field.\n");
-		goto failed;		/* Bad character in restricted charset field */
+		goto failed;		/* Bad character in restrict_ed charset field */
 	}
 
 	if ( isnum && !Is_Numeric(field_text,fldlen,signch,maxdigits,maxdecs) ) {
